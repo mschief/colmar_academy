@@ -41,22 +41,23 @@
 
 /* General styling for the site */
 html{
-  font-size: 20px;
+  font-size: 16px;
 }
 
-section, aside, .bite{
+section, aside, .bite, footer{
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
 }
 
-section{
+section, footer{
   width: calc(100% - 48px);
   padding: 32px 24px;
   position: relative;
+  top: 64px;
 }
 
 aside{
+  align-content: flex-start;
   width: calc(40% - 24px);
   padding-left: 24px;
 }
@@ -84,12 +85,17 @@ span, p{
 h1{
   font-weight: 700;
   font-size: 2.5rem;
-  line-height: 1.4;
+  line-height: 1.2;
+  letter-spacing: 1.5px;
+  margin: 32px 0 24px 0;
 }
 
 h2{
   font-weight: 500;
   font-size: 2rem;
+  width: 100%;
+  margin-bottom: 32px;
+  text-align: center;
 }
 
 h3{
@@ -98,6 +104,55 @@ h3{
   line-height: 1.2;
 }
 
+h4{
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  letter-spacing: 1.25px;
+  margin-bottom: 8px;
+}
+
+a{
+  text-decoration: none;
+}
+
+p{
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+nav a:hover{
+  color: hsl(0, 0%, 61%);
+}
+
+nav a:active{
+  color: hsl(212, 72%, 60%);
+}
+
+/* general for mobile */
+@media only screen and (max-width: 800px) {
+
+  header, section, footer, aside{
+    display: flex;
+    width: 100%;
+    padding: 0;
+  }
+
+  h1{
+    margin: 0 0 32px 0;
+  }
+
+  h2{
+
+  }
+
+  h3{
+    margin-bottom: 24px;
+    font-size: 2rem;
+    letter-spacing: 0.75px;
+  }
+
+}
 
 /* Header specific styling */
 header{
@@ -123,15 +178,17 @@ header{
 }
 
 .icon span{
+  font-weight: 800;
   text-transform: uppercase;
   color: hsl(0, 0%, 29%);
+  font-size: 1.5rem;
 }
 
 #academy{
   color: hsl(0, 0%, 61%);
-  font-weight: 300;
+  font-weight: 400;
 }
-
+/* header navigation styling */
 header nav{
   display: flex;
   align-items: center;
@@ -142,24 +199,93 @@ nav ul li{
   margin-left: 16px;
 }
 
-.menu-mobile{
+nav a:hover{
+  color: hsl(0, 0%, 61%);
+}
+
+nav a:active{
+  color: hsl(212, 72%, 60%);
+}
+
+#menu-mobile{
   display: none;
 }
 
-/* Body specific styling */
-/* Banner styling */
-/*.img-container.main-img{
-  width: 60%;
-}*/
+/* mobile header design */
+@media only screen and (max-width: 800px){
+  .icon, #menu-full{
+    display: none;
+  }
+
+  #menu-mobile{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-content: center;
+  }
+
+  #menu-mobile img{
+    width: 2.5rem;
+  }
+}
+
+/* Overall body styling */
 section:nth-child(odd){
   background-color: hsl(0, 0%, 85%);
 }
-.banner{
-  position: relative;
-  top: 64px;
-  margin: 32px 0;
+
+.main{
+  width: 60%;
 }
 
+.bite{
+  border: solid 1px hsl(180, 3%, 88%);
+  padding: 16px;
+  margin-top: 1px;
+  width: 100%;
+}
+
+.bite:hover{
+  background-color: hsl(0 0% 85%);
+}
+
+.img-content.bite-img{
+    width: 35%;
+    padding-right: 16px;
+}
+
+.bite-cont{
+  width: 61%;
+}
+
+.bite-cont a{
+  color: hsl(212 72% 60%);
+  line-height: 1.5;
+}
+
+.bite-cont a:hover{
+  color: hsl(212 72% 80%);
+}
+
+.bite-cont a:active{
+  color: hsl(0 0% 29%);
+}
+
+@media only screen and (max-height: 800px){
+  aside{
+    padding: 16px;
+  }
+
+  .main{
+    width: 100%;
+  }
+
+  #events-main, .thesis-full{
+    display: none;
+  }
+}
+
+/* Banner specific styling */
 .btn{
   display: flex;
   justify-content: center;
@@ -175,32 +301,101 @@ section:nth-child(odd){
   line-height: 2;
 }
 
-.main{
-  width: 60%;
+.btn:hover{
+  background-color: hsl(0, 0%, 61%);
 }
 
-.bite{
-  border: solid 1px hsl(180, 3%, 88%);
-  padding: 16px;
-  height: calc(.img-content.bite-img + 32px);
+.btn:active{
+  background-color: hsl(212, 72%, 60%);
 }
 
-.img-content.bite-img{
-    width: 35%;
-    padding-right: 16px;
+@media only screen and (max-width: 800px){
+  .side-content{
+    padding: 32px 16px;
+  }
+
+  .btn{
+    width: 100%;
+    background-color: hsl(0, 0%, 61%);
+    z-index: 1;
+    margin: 0;
+  }
+
+  .btn span{
+    font-family: "Roboto", sans-serif;
+    font-size: 1.75rem;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+
+  .btn:hover{
+    background-color: hsl(0, 0%, 29%);
+  }
+
+  .btn:active{
+    background-color: hsl(212, 72%, 60%);
+  }
+
+  .img-content.bite-img{
+    width: 100%;
+  }
 }
 
-.bite-cont{
-  width: calc((100% - 48px)* 65%);
+/* General information/ events specific styling */
+#events-main p{
+  margin-bottom: 32px;
+  font-size: 1.25rem;
+}
+
+/* Course catelogue specific styling */
+
+#course-cat{
+  padding: 32px 72px;
+  justify-content: center;
+  align-items: center;
+}
+
+#course-mobile{
+  display: none;
 }
 
 .course{
-  width: calc((100%-208px)/3);
+  width: calc(100% / 3.5);
   margin: 32px 16px;
+}
+
+.course-title{
+  text-transform: uppercase;
+  margin: 8px 0;
+  font-size: 1.25rem;
 }
 
 .course-desc{
   background-color: hsl(0, 0%, 100%);
   padding: 16px;
+  height: 110px;
 }
+
+@media only screen and (max-width: 800px){
+  #course-cat{
+    width: 100%;
+    padding: 0;
+  }
+
+  .course{
+    display: none;
+  }
+
+  #course-mobile{
+    display: flex;
+    padding: 0;
+  }
+}
+
+/* Thesis section specific styling */
+
+
 /* Footer specific styling */
+footer{
+  padding: 16px 24px;
+}
