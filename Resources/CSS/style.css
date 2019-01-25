@@ -272,6 +272,10 @@ section:nth-child(odd){
 }
 
 @media only screen and (max-height: 800px){
+  section{
+    background-color: #fff;
+  }
+
   aside{
     padding: 16px;
   }
@@ -283,9 +287,19 @@ section:nth-child(odd){
   #events-main, .thesis-full{
     display: none;
   }
+
+  .bite{
+    border: none;
+    margin: 0 0 64px 0;
+    padding: 0;
+  }
 }
 
 /* Banner specific styling */
+.side-content{
+  align-content: center;
+}
+
 .btn{
   display: flex;
   justify-content: center;
@@ -299,6 +313,7 @@ section:nth-child(odd){
 .btn span{
   color: hsl(0, 0%, 100%);
   line-height: 2;
+  font-size: 1.5rem;
 }
 
 .btn:hover{
@@ -338,6 +353,10 @@ section:nth-child(odd){
 
   .img-content.bite-img{
     width: 100%;
+  }
+
+  .bite-content{
+    margin-left: 16px;
   }
 }
 
@@ -387,8 +406,26 @@ section:nth-child(odd){
   }
 
   #course-mobile{
-    display: flex;
+    display: block;
     padding: 0;
+  }
+
+  #course-mobile a{
+    color: hsl(0 0% 29%);
+  }
+
+  #course-mobile .btn{
+    background-color: hsl(0 0% 85%);
+    padding: 16px 0 24px 16px;
+  }
+
+  #course-mobile .btn:hover{
+    background-color: hsl(0, 0%, 29%);
+    color: hsl(0, 0%, 100%);
+  }
+
+  #course-mobile .btn:active{
+    background-color: hsl(212, 72%, 60%);
   }
 }
 
@@ -398,4 +435,5 @@ section:nth-child(odd){
 /* Footer specific styling */
 footer{
   padding: 16px 24px;
+  border-top: solid 1px hsl(180, 3%, 88%);
 }
