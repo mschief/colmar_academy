@@ -143,7 +143,8 @@ nav a:active{
   }
 
   h2{
-
+    padding: 32px 0 16px 0;
+    margin: 0;
   }
 
   h3{
@@ -151,7 +152,6 @@ nav a:active{
     font-size: 2rem;
     letter-spacing: 0.75px;
   }
-
 }
 
 /* Header specific styling */
@@ -230,10 +230,6 @@ nav a:active{
 }
 
 /* Overall body styling */
-section:nth-child(odd){
-  background-color: hsl(0, 0%, 85%);
-}
-
 .main{
   width: 60%;
 }
@@ -243,10 +239,6 @@ section:nth-child(odd){
   padding: 16px;
   margin-top: 1px;
   width: 100%;
-}
-
-.bite:hover{
-  background-color: hsl(0 0% 85%);
 }
 
 .img-content.bite-img{
@@ -271,9 +263,27 @@ section:nth-child(odd){
   color: hsl(0 0% 29%);
 }
 
+@media only screen and (min-height: 800px){
+  section:nth-child(odd){
+    background-color: hsl(0, 0%, 85%);
+  }
+
+  .bite:hover{
+    background-color: hsl(0 0% 85%);
+  }
+}
+
 @media only screen and (max-height: 800px){
   section{
-    background-color: #fff;
+    border-bottom: solid 1px hsl(0, 0%, 85%);
+  }
+
+  section:first-child{
+    background-color: hsl(0, 0%, 85%);
+  }
+
+  section:last-child{
+    border: none;
   }
 
   aside{
@@ -286,12 +296,6 @@ section:nth-child(odd){
 
   #events-main, .thesis-full{
     display: none;
-  }
-
-  .bite{
-    border: none;
-    margin: 0 0 64px 0;
-    padding: 0;
   }
 }
 
@@ -350,20 +354,52 @@ section:nth-child(odd){
   .btn:active{
     background-color: hsl(212, 72%, 60%);
   }
-
-  .img-content.bite-img{
-    width: 100%;
-  }
-
-  .bite-content{
-    margin-left: 16px;
-  }
 }
 
 /* General information/ events specific styling */
 #events-main p{
   margin-bottom: 32px;
   font-size: 1.25rem;
+}
+
+.mobile-bite{
+  display: none;
+}
+
+@media only screen and (max-height: 800px){
+  .bite{
+    width: 100%;
+    border: none;
+    margin: 0 0 64px 0;
+    padding: 0;
+  }
+
+  .bite:last-child{
+    margin: 0;
+  }
+
+  .full-bite{
+    display: none;
+  }
+
+  .img-content.bite-img{
+      width: 100%;
+      padding: 0;
+      margin-bottom: 16px;
+  }
+
+  .mobile-bite{
+    display: block;
+  }
+
+  .bite-cont{
+    margin-left: 16px;
+    width: 90%;
+  }
+
+  .bite-cont a, .bite-cont p{
+    font-size: 1.25rem;
+  }
 }
 
 /* Course catelogue specific styling */
@@ -380,6 +416,7 @@ section:nth-child(odd){
 
 .course{
   width: calc(100% / 3.5);
+  height: 400px;
   margin: 32px 16px;
 }
 
@@ -392,13 +429,13 @@ section:nth-child(odd){
 .course-desc{
   background-color: hsl(0, 0%, 100%);
   padding: 16px;
-  height: 110px;
+  height: 35%;
 }
 
 @media only screen and (max-width: 800px){
   #course-cat{
     width: 100%;
-    padding: 0;
+    padding: 0 0 32px 0;
   }
 
   .course{
@@ -407,33 +444,44 @@ section:nth-child(odd){
 
   #course-mobile{
     display: block;
-    padding: 0;
+    width: 100%;
+    padding: 0 16px 0 16px;
   }
 
-  #course-mobile a{
-    color: hsl(0 0% 29%);
-  }
-
-  #course-mobile .btn{
-    background-color: hsl(0 0% 85%);
+  #course-mobile h3{
+    line-height: 1;
+    letter-spacing: 1.3px;
+    margin: 0;
+    background-color: hsl(0, 0%, 85%);
     padding: 16px 0 24px 16px;
+    margin-bottom: 8px;
   }
 
-  #course-mobile .btn:hover{
+  #course-mobile h3:hover{
     background-color: hsl(0, 0%, 29%);
     color: hsl(0, 0%, 100%);
   }
 
-  #course-mobile .btn:active{
+  #course-mobile h3:active{
     background-color: hsl(212, 72%, 60%);
   }
 }
 
 /* Thesis section specific styling */
-
+@media only screen and (max-width: 800px){
+  #thesis-main{
+    padding-bottom: 24px;
+  }
+}
 
 /* Footer specific styling */
 footer{
   padding: 16px 24px;
   border-top: solid 1px hsl(180, 3%, 88%);
+}
+
+@media only screen and (max-width: 800px){
+  footer{
+    border: none;
+  }
 }
